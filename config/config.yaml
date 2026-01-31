@@ -1,0 +1,42 @@
+# XGBoost Hyperparameters
+xgboost:
+  n_estimators: 200
+  max_depth: 6
+  learning_rate: 0.1
+  subsample: 0.8
+  colsample_bytree: 0.8
+  min_child_weight: 1
+  gamma: 1
+  reg_alpha: 0.5
+  reg_lambda: 1.0
+  random_state: 42
+
+# Deep Learning Configuration
+deep_learning:
+  input_dim: null
+  hidden_units: [128, 64, 32]
+  dropout_rate: 0.3
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+  random_state: 42
+
+# Ensemble Configuration
+ensemble:
+  method: weighted_voting
+  weights: null
+
+# Data Configuration
+data:
+  test_size: 0.2
+  random_state: 42
+  scale_method: standard
+  handle_missing: mean
+  outlier_method: iqr
+
+# Model Evaluation
+evaluation:
+  threshold: 0.5
+  metrics: [roc_auc, f1, precision, recall]
+  false_positive_cost: 1.0
+  false_negative_cost: 10.0
