@@ -1,4 +1,4 @@
-# Fraud Detection Dataset Implementation (Student Submission)
+# Fraud Detection Dataset Implementation
 
 ## Overview
 
