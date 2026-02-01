@@ -1,4 +1,4 @@
-# Fraud Detection Dataset Implementation
+# Fraud Detection Dataset Implementation (Student Submission)
 
 ## Overview
 
@@ -63,28 +63,61 @@ Fraud detection requires more than accuracy. I used:
 
 ### Key Scores
 
-Accuracy:
-
-Accuracy = (TP + TN) / (TP + TN + FP + FN)
-
-Precision:
-
-Precision = TP / (TP + FP)
-
-Recall:
-
-Recall = TP / (TP + FN)
-
-F1 Score:
-
-F1 = 2TP / (2TP + FP + FN)
-
-ROC Terms:
-
-TPR = TP / (TP + FN)  
-FPR = FP / (FP + TN)
+- Accuracy = (TP + TN) / (TP + TN + FP + FN)  
+- Precision = TP / (TP + FP)  
+- Recall = TP / (TP + FN)  
+- F1 Score = 2TP / (2TP + FP + FN)  
 
 ROC-AUC measures ranking quality across thresholds.
+
+---
+
+## Results (Real Dataset Output)
+
+Dataset used:
+
+- Samples: **2666**
+- Features: **12**
+
+---
+
+### Logistic Regression Baseline
+
+Confusion Matrix:
+
+- TN = 202  
+- FP = 16  
+- FN = 83  
+- TP = 233  
+
+Metrics:
+
+- Accuracy: **0.8146**  
+- F1 Score: **0.8248**  
+- ROC-AUC: **0.8882**  
+- Mean CV F1 (5-fold): **0.8296**  
+
+---
+
+### XGBoost Fraud Model (Final)
+
+Confusion Matrix:
+
+- TN = 210  
+- FP = 8  
+- FN = 10  
+- TP = 306  
+
+Metrics:
+
+- Accuracy: **0.9663**  
+- F1 Score: **0.9714**  
+- ROC-AUC: **0.9968**  
+- Mean CV F1 (5-fold): **0.9656**  
+
+---
+
+Final Selected Model: **XGBoost**
 
 ---
 
