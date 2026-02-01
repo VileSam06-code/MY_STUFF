@@ -27,10 +27,7 @@ The dataset contains labeled financial transactions with:
 ```
 07-dataset-implementation/
 ├── README.md                    # Project overview
-├── INSTRUCTIONS.md              # Complete setup guide for students
-├── requirements.txt             # Python dependencies
 ├── main_training.py             # Complete training pipeline (7-step workflow)
-├── example_usage.py             # Step-by-step examples for students
 │
 ├── src/                         # Main source code (Python package)
 │   ├── __init__.py              # Package initialization with exports
