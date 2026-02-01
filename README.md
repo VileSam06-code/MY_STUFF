@@ -1,15 +1,15 @@
-# Fraud Detection Dataset Implementation
+#Fraud Detection Dataset Implementation
 
 ## Overview
 
-This module is my **hands-on implementation** of a fraud detection pipeline using a real UPI transaction dataset.
+This module is my hands-on implementation of a fraud detection pipeline using a real UPI transaction dataset.
 
-Through this project, I learned the complete machine learning workflow:
+Through this project, I learned the complete ML workflow:
 
 - Loading and preprocessing transaction data  
 - Feature engineering for fraud patterns  
 - Training baseline and advanced models  
-- Evaluating results using proper fraud-relevant metrics  
+- Evaluating results using fraud-relevant metrics  
 - Validating predictions using confusion matrices  
 
 ---
@@ -30,29 +30,23 @@ The dataset contains UPI transaction records with:
 
 ### Logistic Regression (Baseline)
 
-Fraud probability is modeled as:
+Logistic Regression models fraud probability as:
 
-\[
-P(y=1|x)=\sigma(w^Tx+b)
-\]
+P(y=1|x) = sigmoid(wᵀx + b)
 
-This provides an interpretable baseline model.
+This provides an interpretable baseline.
 
 ---
 
 ### XGBoost (Final Model)
 
-Boosting builds an ensemble of trees:
+XGBoost builds an ensemble of decision trees:
 
-\[
-f(x)=\sum_{t=1}^{T}\eta g_t(x)
-\]
+f(x) = Σ η · gₜ(x)
 
-Class imbalance is handled using:
+Class imbalance is handled with:
 
-\[
-scale\_pos\_weight=\frac{\#negative}{\#positive}
-\]
+scale_pos_weight = (#negative / #positive)
 
 ---
 
@@ -62,34 +56,33 @@ Fraud detection requires more than accuracy. I used:
 
 ### Confusion Matrix
 
-\[
-\begin{array}{c|cc}
- & Predicted Fraud & Predicted Normal \\
-\hline
-Actual Fraud & TP & FN \\
-Actual Normal & FP & TN
-\end{array}
-\]
+|               | Predicted Fraud | Predicted Normal |
+|--------------|----------------|-----------------|
+| Actual Fraud  | TP             | FN              |
+| Actual Normal | FP             | TN              |
 
 ### Key Scores
 
 Accuracy:
 
-\[
-Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
-\]
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+
+Precision:
+
+Precision = TP / (TP + FP)
+
+Recall:
+
+Recall = TP / (TP + FN)
 
 F1 Score:
 
-\[
-F1=\frac{2TP}{2TP+FP+FN}
-\]
+F1 = 2TP / (2TP + FP + FN)
 
 ROC Terms:
 
-\[
-TPR=\frac{TP}{TP+FN},\quad FPR=\frac{FP}{FP+TN}
-\]
+TPR = TP / (TP + FN)  
+FPR = FP / (FP + TN)
 
 ROC-AUC measures ranking quality across thresholds.
 
